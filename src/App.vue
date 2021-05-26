@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 :class="{red:isActive}">我是老大</h1>
+    <button @click="decrement">-</button>
+    {{num}}
+    <button @click="increment">+</button>
+    <child></child>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import child from "./components/child";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    child,
+  },
+  data() {
+    return {
+      isActive: true,
+      num: 0,
+      message:'我想吃火锅',
+    }
+  },
+  methods: {
+    increment() {
+      this.num++
+    },
+    decrement() {
+      this.num--
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+  padding: 10px 40vw;
+}
+.red {
+  color: red
 }
 </style>

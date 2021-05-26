@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .circle {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      background: #3b95e9;
+      animation-name: circle;
+    }
+
+    @keyframes circle {
+      0% {
+        background: #3b95e9;
+        left: 0;
+        top: 0;
+      }
+      25% {
+        background: #4cd964;
+        left: 80vw;
+        top: 0;
+      }
+      50% {
+        background: #ea3106;
+        left: 80vw;
+        top: 50vh;
+      }
+      75% {
+        background: #ffd930;
+        left: 0;
+        top: 50vh;
+      }
+      100% {
+        background: darkviolet;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .trangle1 {
+      position: relative;
+      top: 10vw;
+      left: 10vw;
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid red;
+      border-right: 50px solid transparent;
+      animation-name: trangle1;
+    }
+
+    @keyframes trangle1 {
+      0% {
+        top: 10vw;
+        left: 10vw;
+      }
+      100% {
+        top: 10vw;
+        left: 32vw;
+        border-bottom-color: #3199e8;
+      }
+    }
+
+    .trangle2 {
+      position: relative;
+      top: 3.5vw;
+      left: 75vw;
+      width: 0;
+      height: 0;
+      border-top: 100px solid green;
+      border-left: 50px solid transparent;
+      animation-name: trangle2;
+    }
+
+    @keyframes trangle2 {
+      0% {
+        top: 3.5vw;
+        left: 75vw;
+      }
+      100% {
+        top: 3.5vw;
+        left: 32vw;
+        border-top-color: #3199e8;
+      }
+    }
+
+    .circle,
+    .trangle1,
+    .trangle2 {
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate;
+    }
+  </style>
+</head>
+<body>
+<div class="circle"></div>
+<div class="trangle1"></div>
+<div class="trangle2"></div>
+</body>
+<script>
+  //等比数列求和
+  fun = (q, n) => {
+    var sum = 0;
+    for (let i = 1; i <= n; i++) {
+      let qN = Math.pow(q, i);
+      sum += qN;
+      console.log(`q的${i}次方为 ${qN}`);
+      console.log(`S的${i}次和为 ${sum}`);
+    }
+    return sum
+  }
+  console.log(fun(2, 10));
+</script>
+</html>
