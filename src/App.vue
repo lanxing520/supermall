@@ -1,47 +1,25 @@
 <template>
   <div id="app">
-    <h1 :class="{red:isActive}">我是老大</h1>
-    <button @click="decrement">-</button>
-    {{num}}
-    <button @click="increment">+</button>
-    <child></child>
+    <router-view/>
+    <MainTabbar/>
   </div>
 </template>
 
 <script>
-import child from "./components/child";
+import MainTabbar from "./components/content/mainTabbar/MainTabbar";
 
 export default {
   name: 'App',
   components: {
-    child,
+    MainTabbar,
   },
   data() {
-    return {
-      isActive: true,
-      num: 0,
-      message:'我想吃火锅',
-    }
+    return {}
   },
-  methods: {
-    increment() {
-      this.num++
-    },
-    decrement() {
-      this.num--
-    }
-  }
+  methods: {}
 }
 </script>
 
 <style>
-#app {
-  width: 100vw;
-  height: 100vh;
-  background-color: lightblue;
-  padding: 10px 40vw;
-}
-.red {
-  color: red
-}
+@import "./assets/css/base.css";
 </style>
