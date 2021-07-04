@@ -1,8 +1,12 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <MainTabbar/>
-  </div>
+  <v-app id="app">
+    <v-main>
+        <keep-alive exclude="Detail">   <!--Detail组件不要缓存-->
+          <router-view/>
+        </keep-alive>
+        <MainTabbar/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>

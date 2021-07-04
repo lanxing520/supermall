@@ -56,7 +56,7 @@ export default {
 .tab-bar-item {
   flex: 1;
   text-align: center;
-  height: 49px;
+  height: 50px;
   font-size: 14px;
 }
 
@@ -64,7 +64,6 @@ export default {
   width: 23px;
   height: 23px;
   margin-top: 3px;
-  margin-bottom: 2px;
   vertical-align: center;
 }
 

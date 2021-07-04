@@ -2,37 +2,37 @@
   <tab-bar>   <!--调用TabBar里的匿名插槽-->
     <tab-bar-item path="/home" activeColor="lightskyblue">  <!--创建路径，好让TabBarItem内的props接受-->
       <template #item-icon>   <!--  #是v-slot:的缩写  -->
-        <img src="~assets/img/tabbar/tabbarhome.svg" alt="">
+        <img src="~assets/img/tabbar/home.svg" alt="">
       </template>
       <template #item-icon-active>
-        <img src="~assets/img/tabbar/tabbarhomeselect.svg" alt="">
+        <img src="~assets/img/tabbar/home_active.svg" alt="">
       </template>
       <div slot="item-text">首页</div>
     </tab-bar-item>
     <tab-bar-item path="/category" activeColor="lightskyblue">
       <template #item-icon>
-        <img src="~assets/img/tabbar/tabbar-icon-chanpin-default.svg" alt="">
+        <img src="~assets/img/tabbar/category.svg" alt="">
       </template>
       <template #item-icon-active>
-        <img src="~assets/img/tabbar/tabbar-icon-chanpin-selected.svg" alt="">
+        <img src="~assets/img/tabbar/category_active.svg" alt="">
       </template>
       <div slot="item-text">分类</div>
     </tab-bar-item>
     <tab-bar-item path="/cart" activeColor="lightskyblue">
       <template #item-icon>
-        <img src="~assets/img/tabbar/gouwuche.svg" alt="">
+        <img src="~assets/img/tabbar/shopcart.svg" alt="">
       </template>
       <template #item-icon-active>
-        <img src="~assets/img/tabbar/gouwuche_1.svg" alt="">
+        <img src="~assets/img/tabbar/shopcart_active.svg" alt="">
       </template>
       <div slot="item-text">购物车</div>
     </tab-bar-item>
     <tab-bar-item path="/profile" activeColor="lightskyblue">
       <template #item-icon>
-        <img src="~assets/img/tabbar/icontabbarmyup.svg" alt="">
+        <img src="~assets/img/tabbar/profile.svg" alt="">
       </template>
       <template #item-icon-active>
-        <img src="~assets/img/tabbar/tabbar-icon-wode-selected.svg" alt="">
+        <img src="~assets/img/tabbar/profile_active.svg" alt="">
       </template>
       <div slot="item-text">我的</div>
     </tab-bar-item>
