@@ -171,9 +171,11 @@ export default {
 }
 
 .home-nav {
+  position: relative;
   background-color: var(--color-lightblue);
   color: #fff;
   border: 0;
+  font-size: 1.2rem;
 }
 
 #home .content {
@@ -183,6 +185,7 @@ export default {
   left: 0;
   right: 0;
   overflow: hidden;
+  height: calc(100% - 44px - 3.6rem);
 }
 
 .tab-control {

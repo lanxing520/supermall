@@ -20,18 +20,7 @@
     <back-top @click.native="backClick" v-show="isShowBackTop"/>
     <detail-bottom-bar @addToCart="addToCart"/>
     <!--加入购物车提示框-->
-    <div class="text-center ma-2">
-      <v-snackbar
-        absolute
-        v-model="snackbar"
-        :timeout="1000"
-        centered
-        color="success"
-        outlined
-      >
-        <p>{{ text }}</p>
-      </v-snackbar>
-    </div>
+<!--    <Toast :message="message" :show="show"/>-->
   </div>
 </template>
 
@@ -47,6 +36,7 @@ import DetailBottomBar from "./childComps/DetailBottomBar";
 
 import Scroll from "components/common/scroll/Scroll";
 import GoodsList from "components/content/goods/GoodsList";
+// import Toast from "components/common/toast/Toast";
 
 import { mapActions } from 'vuex'
 
@@ -73,7 +63,8 @@ export default {
     DetailComment,
     Scroll,
     GoodsList,
-    DetailBottomBar
+    DetailBottomBar,
+    // Toast
   },
   mixins: [itemListenerMixin, backTopMixin], //混入
   data() {
@@ -88,8 +79,8 @@ export default {
       recommends: [],
       themeTopYs: [0],
       currentIndex: 0,
-      snackbar: false,
-      text: `加入购物车成功`,
+      message: ``,
+      show: false
     };
   },
   created() {
@@ -173,14 +164,19 @@ export default {
 
       //将商品添加到购物车
       this.addCart(product).then(res => {
-        console.log(res);
+        // this.show = true;
+        // this.message = res;
+        // setTimeout(()=>{
+        //   this.show = false;
+        //   this.message = ''
+        // },1500)
+        this.$toast.show(res,1500)
       })
       // this.$store.dispatch('addCart',product).then(res => {
       //   console.log(res);
       // })
 
       //显示提示信息（‘加入购物车成功’）
-      this.snackbar = true
     }
   }
 };

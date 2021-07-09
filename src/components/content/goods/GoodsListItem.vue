@@ -1,7 +1,7 @@
 <template>
     <div class="goodsItem" @click="itemClick">
       <!-- Vue  @load=‘functionName’监听图片加载-->
-      <img :src="showImage" alt="" @load="imageLoad">
+      <img v-lazy="showImage" alt="" @load="imageLoad">
       <div class="goodsInfo">
         <p>{{goodsItem.title}}</p>
         <span class="price">价格：{{goodsItem.price}}</span>
@@ -44,14 +44,14 @@ export default {
 <style scoped>
 .goodsItem {
   position: relative;
-  width: 46vw ;
+  width: 45vw ;
   height: 90vw;
   margin: 3vw 0;
 }
 .goodsItem img {
-  width: 46vw;
+  width: 45vw;
   height: 70vw;
-  border-radius: 5vw;
+  border-radius: 3vw;
 }
 .goodsInfo {
   position: absolute;
